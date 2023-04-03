@@ -13,3 +13,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+.imageResult {
+    width: 50%;
+    opacity: 0;
+}

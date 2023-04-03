@@ -2,7 +2,7 @@
 
 const dogBtn = document.querySelector('.dog-btn');
 const dogContainer = document.querySelector('.dog-container');
-const result = document.querySelector('.result');
+const result = document.querySelector('.imageResult');
 
 const renderError = function(msg) {
     dogContainer.insertAdjacentElement('afterend', msg)
@@ -19,10 +19,8 @@ const getJSON = function(dogImageUrl, errorMsg = "Something went wrong. The dogs
 const getRandomDog = function(dogImageUrl) {
     getJSON(dogImageUrl, 'Doggo is missing... Try again.')
     .then(dogData => {
-        console.log(dogData);
-        const img = document.createElement("img");
-        img.src = dogData.message;
-        result.insertAdjacentElement('afterend', img);
+        result.src = dogData.message
+        result.style.opacity = 1;
     })
     .catch(err => {
         console.error(`${err}`);
